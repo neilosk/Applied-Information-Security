@@ -1,0 +1,33 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    implementation 'org.slf4j:slf4j-api:2.0.0-alpha1'
+    implementation 'org.slf4j:slf4j-simple:2.0.0-alpha1'
+    implementation 'org.xerial:sqlite-jdbc:3.28.0'
+    implementation 'com.sun.mail:javax.mail:1.6.2'
+    implementation 'org.passay:passay:1.6.0'
+}
+
+task run(type: JavaExec) {
+    group 'Run'
+    description 'Runs this project as a command-line application (args w/ --args).'
+    standardInput = System.in
+    classpath sourceSets.main.runtimeClasspath
+    mainClass = "paybud.WebServer"
+}
+
+task db(type: Copy) {
+    group 'Build'
+    description 'Resets the database.'
+    from 'db'
+    into 'db'
+    rename('empty.db', 'paybud.db')
+}

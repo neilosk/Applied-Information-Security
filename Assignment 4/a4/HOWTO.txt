@@ -1,0 +1,55 @@
+
+PayBud - Howto
+======================================================================
+
+PayBud is managed and built with Gradle. What follows are instructions
+on how to use Gradle to build and run PayBud.
+
+Files and directories:
+
+  src          PayBud web server
+  static       PayBud web client
+  db           PayBud database
+  gradle       Gradle build tool
+  [.gradle]    Gradle downloaded files
+  [build]      Gradle output (class files, etc.)
+  build.gradle Gradle configuration file
+  gradlew.bat  Gradle script (Windows)
+  gradlew      Gradle script (Linux/Mac)
+  HOWTO.txt    This file
+
+Builds for this project are managed by Gradle - a build automation
+tool. What follows are commands that you are likely to need. They
+assume that you are in a terminal window, and have navigated to the
+project directory (and can e.g. see the above-listed files).
+
+Linux users: Add "./" in front of "gradlew" in the following commands.
+
+Windows users: Set JAVA_HOME environment variable (you installed JDK):
+  https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html
+
+
+Gradle tasks
+----------------------------------------------------------------------
+
+List available Gradle tasks:
+
+  gradlew tasks
+
+Compile the Java source:
+
+  gradlew build
+
+Run the PayBud web server (stop with CTRL+C):
+
+  gradlew run
+
+Clear the database (to start fresh):
+
+  gradlew db
+
+In case you experience errors: Might be because a previous Gradle task
+left a Gradle process in the background that has a lock on a file.
+Kill all Gradle processes:
+
+  gradlew --stop

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PayBud - Payment System for Best Buds</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="module" src="api.js"></script>
+    <script type="module" src="menu/code.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans"/>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto"/>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div id="content">
+    <div style="overflow: hidden; height:8.75em; margin:0em">
+      <img src="../paybud.png" style="width:12em">
+    </div>
+    <p>
+      hello <b><span id="email"></span></b>, your balance is <b><span id="balance"></span> kr</b>. <a href="" id="logout">logout</a>.        
+    </p>
+    <h2>menu</h2>
+    <div style="text-align:left;width:28em;margin-left:auto;margin-right:auto">
+      <ul>
+        <li><a href="../send">send</a> to an email</li>
+        <li><a href="../deposit">deposit</a> into your account from credit card</li>
+        <li><a href="../withdraw">withdraw</a> from your account into credit card</li>
+      </ul>
+    </div>
+  </div>
+  <p/>
+  <div id="response"/>
+</body>
+</html>
